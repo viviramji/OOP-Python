@@ -13,8 +13,8 @@ def Game():
     con += 1
 
   
-  for i in range(0,2):
-    print("Round {0} \n".format(i+1))
+  for i in range(0,4):
+    print("\n\t **Round {0} ** \n".format(i+1))
     for p in playerList:
       print("{0}'s turn: ".format(p.getName()))
       trying = 1
@@ -36,8 +36,14 @@ def Game():
           p.setPoints(2)
           break
         else:
-          print("No acertaste pero la distancia maxima fue {0}".format(r))
+          print("You've failed, {0}".format(r))
+        print()
         trying += 1
+
+        print("\n\n DATA: ")
+  
+  for p in playerList:
+    print(" {} || {}".format(p.getName(), p.getPoints()))
 
 
 Game()
